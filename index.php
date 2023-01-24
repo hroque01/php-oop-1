@@ -40,6 +40,13 @@ class Movie
         return $str;
     }
 
+    public function getHTML()
+    {
+        return "<h1>Title: </h1>" . $this->title
+            . "<br>" . "<h1>Genres: </h1>" . $this->getGenres()
+            . "<br>" . "<h1>Duration: </h1>" . $this->duration;
+    }
+
 }
 
 $spidermanAction = new Genre("Action");
