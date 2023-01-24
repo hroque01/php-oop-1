@@ -29,6 +29,17 @@ class Movie
         $this->duration = $duration;
     }
 
+    public function getGenres()
+    {
+
+        $str = "";
+        foreach ($this->genres as $genre) {
+
+            $str .= $genre->getGenres() . "<br>";
+        }
+        return $str;
+    }
+
 }
 
 $spidermanAction = new Genre("Action");
