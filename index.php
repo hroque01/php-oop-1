@@ -8,6 +8,12 @@ class Genre
         $this->genre = $genre;
     }
 
+    // creo una funzione per prendere piu di un genere
+    public function getGenres()
+    {
+        return $this->genre;
+    }
+
 }
 class Movie
 {
@@ -24,3 +30,7 @@ class Movie
     }
 
 }
+
+$spidermanAction = new Genre("Action");
+$spidermanAdventure = new Genre("Adventure");
+$spidermanArr = [$spidermanAction, $spidermanAdventure];
