@@ -42,13 +42,26 @@ class Movie
 
     public function getHTML()
     {
-        return "<h1>Title: </h1>" . $this->title
-            . "<br>" . "<h1>Genres: </h1>" . $this->getGenres()
-            . "<br>" . "<h1>Duration: </h1>" . $this->duration;
+        return "<div> <b>Title: </b>" . $this->title . "</div>"
+            . "<br>" . "<div>" . "<b>Genres: </b>" . "<br>" . $this->getGenres() . "</div>"
+            . "<br>" . "<div>" . "<b>Duration: </b>" . $this->duration . "<div>";
     }
 
 }
 
+//Array
 $spidermanAction = new Genre("Action");
 $spidermanAdventure = new Genre("Adventure");
 $spidermanArr = [$spidermanAction, $spidermanAdventure];
+
+$IronmanAction = new Genre("Action");
+$IronmanSciFi = new Genre("SciFi");
+$IronmanArr = [$IronmanAction, $IronmanSciFi];
+
+//Print
+$spidermanMovie = new Movie("Spiderman: No Way Home", $spidermanArr, " 150 min");
+$IronmanMovie = new Movie("Iron Man", $IronmanArr, "120 min");
+
+echo $spidermanMovie->getHTML();
+echo "<hr>";
+echo $IronmanMovie->getHTML();
